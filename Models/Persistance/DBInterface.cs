@@ -2,7 +2,8 @@
 using System.Data;
 using Médicaments.Models.MesExceptions;
 
-namespace Médicaments.Models.Metier
+namespace Médicaments.Models.Persistance
+
 {
     public class DBInterface
     {

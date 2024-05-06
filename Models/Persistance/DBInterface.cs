@@ -1,10 +1,11 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Médicaments.Models.MesExceptions;
+using Médicaments.Models.Metier;
+using MySql.Data.MySqlClient;
 using System.Data;
-using Médicaments.Models.MesExceptions;
 
 namespace Médicaments.Models.Persistance
-
 {
+
     public class DBInterface
     {
         /// <summary>

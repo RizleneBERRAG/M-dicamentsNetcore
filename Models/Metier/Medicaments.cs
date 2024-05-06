@@ -1,6 +1,6 @@
 ﻿namespace Médicaments.Models.Metier
 {
-    public class Médicaments
+    public class Medicaments
     {
         private int id_medicament;
         private int id_famille;

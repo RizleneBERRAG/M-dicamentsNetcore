@@ -72,5 +72,57 @@ namespace Médicaments.Controllers
 		}
 
 
+		public IActionResult Ajouter(string id)
+
+		{
+			Prescrire mesPrescriptions = null;
+
+			try
+			{
+
+				mesPrescriptions = ServiceMedicament.GetmesPrescriptions(id);
+
+				return View(mesPrescriptions);
+
+			}
+
+			catch (MonException e)
+			{
+
+				return NotFound();
+
+
+			}
+
+		}
+
+
+		[HttpPost]
+		public IActionResult Ajouter(Prescrire unP)
+
+		{
+			try
+			{
+
+
+				ServiceMedicament.InsertPrescription(unP);
+
+				return View();
+
+			}
+
+			catch (MonException e)
+			{
+
+				return NotFound();
+
+			}
+
+		}
+
+
+
+
+
 	}
 }

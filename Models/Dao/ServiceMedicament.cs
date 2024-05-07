@@ -77,9 +77,25 @@ namespace Médicaments.Models.Dao
 			{
 				DBInterface.Execute_Transaction(req);
 			}
-			catch (MonException erreur)
+			catch (MonException e)
 			{
-				throw erreur;
+				throw e;
+			}
+		}
+
+
+		public static void InsertPrescription(Prescrire unP)
+		{
+			Serreurs er = new Serreurs("Erreur sur l'insertion du médicament.", "ServiceMedicament.InsertPrescription()");
+			String req = "INSERT INTO Prescrire (id_medicament, id_dosage, id_type_individu, posologie) VALUES (" +
+				unP.Id_medicament + ", " + unP.Id_dosage + ", " + unP.Id_type_individu + ", '" + unP.Posologie + "')";
+			try
+			{
+				DBInterface.Execute_Transaction(req);
+			}
+			catch (MonException e)
+			{
+				throw e;
 			}
 		}
 	}

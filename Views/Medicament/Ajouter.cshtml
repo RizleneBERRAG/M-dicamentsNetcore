@@ -1,21 +1,21 @@
 ﻿@model Médicaments.Models.Metier.Prescrire;
 @{
-	ViewBag.Title = "Modifier";
+	ViewBag.Title = "Ajouter";
 	Layout = "~/Views/Shared/_LayoutMedicament.cshtml";
 }
 
-<h2>Modifier une prescription</h2>
+<h2>Ajouter une prescription</h2>
 
 @if (Model != null)
 {
-	@using (Html.BeginForm("Modifier", "Medicament", FormMethod.Post))
+	@using (Html.BeginForm("Ajouter", "Medicament", FormMethod.Post))
 	{
 
 		@Html.AntiForgeryToken()
 
 		<div class="card col-8 mx-auto mt-5">
 			<div class="card-body">
-				<h3 class="card-title">Modifier une Prescription</h3>
+				<h3 class="card-title">Ajouter une Prescription</h3>
 				<div class="form-horizontal">
 					<hr />
 					@Html.ValidationSummary(true, "", new { @class = "text-danger" })

@@ -39,7 +39,7 @@ namespace Médicaments.Models.Dao
 			Serreurs er = new Serreurs("Erreur sur lecture des médicaments.", "Medicament");
 			try
 			{
-				String mysql = "SELECT * ";
+				String mysql = "SELECT id_medicament, id_dosage, id_type_individu, posologie ";
 				mysql += "FROM prescrire ";
 				mysql += "WHERE id_medicament = " + id;
 				dt = DBInterface.Lecture(mysql, er);
@@ -68,11 +68,10 @@ namespace Médicaments.Models.Dao
 		{
 			Serreurs er = new Serreurs("Erreur sur la mise à jour du médicament.", "ServiceMedicament.UpdatePrescription()");
 			String req = "UPDATE prescrire " +
-				" SET id_medicament = " + unP.Id_medicament + ", " +
-				" id_dosage = " + unP.Id_dosage + ", " +
-				" id_type_individu = " + unP.Id_type_individu + ", " +
-				" posologie = '" + unP.Posologie + "' " +
-				" WHERE id_medicament = " + unP.Id_medicament;
+			" SET id_dosage = " + unP.Id_dosage + ", " +
+			" id_type_individu = " + unP.Id_type_individu + ", " +
+			" posologie = '" + unP.Posologie + "'" +
+			" WHERE id_medicament = " + unP.Id_medicament;
 			try
 			{
 				DBInterface.Execute_Transaction(req);

@@ -67,7 +67,7 @@ namespace Médicaments.Controllers
 
 			catch (MonException e)
 			{
-
+				ModelState.AddModelError("Erreur", "Erreur lors de la modification de la prescription : " + e.Message);
 				return View(unP);
 
 			}

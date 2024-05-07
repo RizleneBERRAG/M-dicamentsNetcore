@@ -30,8 +30,6 @@ namespace Médicaments.Models.Dao
 			return mesMedicaments;
 		}
 
-
-
 		public static Prescrire GetmesPrescriptions(String id)
 		{
 			DataTable dt;

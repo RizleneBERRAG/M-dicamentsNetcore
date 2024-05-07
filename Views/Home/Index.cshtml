@@ -1,10 +1,31 @@
 ﻿@{
-	ViewBag.Title = "Accueil";
-	Layout = Layout = "~/Views/Shared/_LayoutMedicament.cshtml";
+    ViewBag.Title = "Accueil";
+    Layout = "~/Views/Shared/_LayoutMedicament.cshtml";
 }
+
+<br />
+<br />
+<br />
+
 <h2>Accueil</h2>
-<div>
-	<p>
-		Bienvenue dans le monde MVC <span style="color:red">@ViewData["Nom"]</span>
-	</p>
-</div>
+
+<br />
+<br />
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h2 class="text-center mb-4">Bienvenue dans notre plateforme de gestion médicale !</h2>
+                <p class="lead">Découvrez un nouvel univers de praticité et de précision dans la gestion des prescriptions et des dosages médicamenteux.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

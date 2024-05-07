@@ -1,37 +1,14 @@
 ﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<div class="container">
-		@Html.ActionLink("Médicaments", "Index", "Home", new { area = "" }, new { @class ="navbar-brand" })
-		<button class="navbar-toggler" type="button" data-toggle="collapse" datatarget="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		@Html.ActionLink("Prescriptions Médicales", "Index", "Home", new { area = "" }, new { @class ="navbar-brand" })
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<div class="navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Interroger
-					</a>
-					<ul class="dropdown-menu">
-						<li class="dropdown-header">Fiches</li>
-						<li><hr class="dropdown-divider"></li>
-						<a class="dropdown-item" asp-area="" asp-controller="Medicament" asp-action="Index">Liste des médicaments</a>
-
-					</ul>
-				</li>
-
-
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Gérer
-					</a>
-					<ul class="dropdown-menu">
-						<li class="dropdown-header">Gestion</li>
-						<li><hr class="dropdown-divider"></li>
-						<a class="dropdown-item" asp-area="" asp-controller="Medicament" asp-action="Ajouter">Ajouter Medicament</a>
-						<a class="dropdown-item" asp-area="" asp-controller="Medicament" asp-action="Modifier">Modifier Medicament</a>
-					</ul>
-				</li>
+				<li class="nav-item"><a class="nav-link text-light" asp-area="" asp-controller="Medicament" asp-action="Index">Liste des médicaments</a></li>
+				<li class="nav-item"><a class="nav-link text-light" asp-area="" asp-controller="Medicament" asp-action="Ajouter">Ajouter Médicament</a></li>
 			</ul>
 		</div>
 	</div>

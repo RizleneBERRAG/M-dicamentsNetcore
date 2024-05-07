@@ -33,7 +33,10 @@ namespace Médicaments.Controllers
 			{
 
 				mesPrescriptions = ServiceMedicament.GetmesPrescriptions(id);
-
+				if (mesPrescriptions == null)
+				{
+					return NotFound();
+				}
 				return View(mesPrescriptions);
 
 			}
@@ -58,41 +61,25 @@ namespace Médicaments.Controllers
 
 				ServiceMedicament.UpdatePrescription(unP);
 
-				return View();
+				return RedirectToAction("Index");
 
 			}
 
 			catch (MonException e)
 			{
 
-				return NotFound();
+				return View(unP);
 
 			}
 
 		}
 
 
-		public IActionResult Ajouter(string id)
+		public IActionResult Ajouter()
 
 		{
-			Prescrire mesPrescriptions = null;
-
-			try
-			{
-
-				mesPrescriptions = ServiceMedicament.GetmesPrescriptions(id);
-
+			var mesPrescriptions = new Prescrire();
 				return View(mesPrescriptions);
-
-			}
-
-			catch (MonException e)
-			{
-
-				return NotFound();
-
-
-			}
 
 		}
 
@@ -107,14 +94,14 @@ namespace Médicaments.Controllers
 
 				ServiceMedicament.InsertPrescription(unP);
 
-				return View();
+				return RedirectToAction("Index");
 
 			}
 
 			catch (MonException e)
 			{
 
-				return NotFound();
+				return View(unP);
 
 			}
 

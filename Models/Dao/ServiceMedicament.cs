@@ -67,11 +67,11 @@ namespace Médicaments.Models.Dao
 		public static void UpdatePrescription(Prescrire unP)
 		{
 			Serreurs er = new Serreurs("Erreur sur la mise à jour du médicament.", "ServiceMedicament.UpdatePrescription()");
-			String req = "UPDATE Prescrire SET " +
-				"id_medicament = " + unP.Id_medicament +
-				", id_dosage = " + unP.Id_dosage +
-				", id_type_individu = " + unP.Id_type_individu +
-				", posologie = '" + unP.Posologie + "' " +
+			String req = "UPDATE prescrire " +
+				" SET id_medicament = " + unP.Id_medicament + ", " +
+				" id_dosage = " + unP.Id_dosage + ", " +
+				" id_type_individu = " + unP.Id_type_individu + ", " +
+				" posologie = '" + unP.Posologie + "' " +
 				" WHERE id_medicament = " + unP.Id_medicament;
 			try
 			{
@@ -87,7 +87,7 @@ namespace Médicaments.Models.Dao
 		public static void InsertPrescription(Prescrire unP)
 		{
 			Serreurs er = new Serreurs("Erreur sur l'insertion du médicament.", "ServiceMedicament.InsertPrescription()");
-			String req = "INSERT INTO Prescrire (id_medicament, id_dosage, id_type_individu, posologie) VALUES (" +
+			String req = "INSERT INTO prescrire (id_medicament, id_dosage, id_type_individu, posologie) VALUES (" +
 				unP.Id_medicament + ", " + unP.Id_dosage + ", " + unP.Id_type_individu + ", '" + unP.Posologie + "')";
 			try
 			{

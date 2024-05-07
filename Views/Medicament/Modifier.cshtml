@@ -1,1 +1,74 @@
-﻿
+﻿@model Médicaments.Models.Metier.Prescrire;
+@{
+	ViewBag.Title = "Modifier";
+	Layout = "~/Views/Shared/_LayoutMedicament.cshtml";
+}
+
+<h2>Modifier une prescription</h2>
+
+@if (Model != null)
+{
+	@using (Html.BeginForm("Modifier", "Prescrire", FormMethod.Post))
+	{
+
+		@Html.AntiForgeryToken()
+
+		<div class="card col-8 mx-auto mt-5">
+			<div class="card-body">
+				<h3 class="card-title">Modifier une Prescription</h3>
+				<div class="form-horizontal">
+					<hr />
+					@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+					<!-- id_medicament  -->
+					<div class="input-group mb-3">
+						<div class="input-group-prepend mr-2 col-lg-4 col-xl-3">
+							<span class="input-group-text" id="id_medicament-input">Id medicament : </span>
+						</div>
+						@Html.EditorFor(model => model.Id_medicament, new { htmlAttributes = new { @class = "form-control", @disabled = "" } })
+						@Html.ValidationMessageFor(model => model.Id_medicament, "", new { @class ="text-danger" })
+						<input name="Id_medicament" type="HIDDEN" value="@Model.Id_medicament" id="Id_medicament"
+							   class="form-control"
+							   aria-describedby="Id-medicament-input" />
+					</div>
+
+					<!-- id_dosage -->
+					<div class="input-group mb-3">
+						<div class="input-group-prepend mr-2 col-lg-4 col-xl-3">
+							<span class="input-group-text" id="Id_dosage-input">
+								Id_dosage :
+							</span>
+						</div>
+						<input name="Id_dosage" type="text" class="form-control" value="@Model.Id_dosage" id="Id_dosage" />
+					</div>
+
+					<!-- id_type_individu -->
+					<div class="input-group mb-3">
+						<div class="input-group-prepend mr-2 col-lg-4 col-xl-3">
+							<span class="input-group-text" id="Id_type_individu-input">
+								Id_type_individu :
+							</span>
+						</div>
+						<input name="Id_type_individu" type="text" class="form-control" value="@Model.Id_type_individu" id="Id_type_individu" />
+					</div>
+
+					<!-- posologie -->
+					<div class="input-group mb-3">
+						<div class="input-group-prepend mr-2 col-lg-4 col-xl-3">
+							<span class="input-group-text" id="Posologie-input">
+								Posologie :
+							</span>
+						</div>
+						<input name="Posologie" type="text" class="form-control" value="@Model.Posologie" id="Posologie" />
+					</div>
+
+					<div class="form-group">
+						<div class="col-md-offset-2 col-md-10">
+							<input type="submit" value="Enregistrer" class="btn btn-primary" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+}

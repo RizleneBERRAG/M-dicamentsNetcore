@@ -23,13 +23,11 @@
 					<!-- id_medicament  -->
 					<div class="input-group mb-3">
 						<div class="input-group-prepend mr-2 col-lg-4 col-xl-3">
-							<span class="input-group-text" id="id_medicament-input">Id medicament : </span>
+							<span class="input-group-text" id="Id_medicament-input">
+								Id medicament :
+							</span>
 						</div>
-						@Html.EditorFor(model => model.Id_medicament, new { htmlAttributes = new { @class = "form-control", @disabled = "" } })
-						@Html.ValidationMessageFor(model => model.Id_medicament, "", new { @class ="text-danger" })
-						<input name="Id_medicament" type="HIDDEN" value="@Model.Id_medicament" id="Id_medicament"
-							   class="form-control"
-							   aria-describedby="Id-medicament-input" />
+						<input name="Id_medicament" type="text" class="form-control" value="@Model.Id_medicament" id="Id_medicament" />
 					</div>
 
 					<!-- id_dosage -->

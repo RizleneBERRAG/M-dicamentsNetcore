@@ -64,6 +64,11 @@
                             <span>
                                 <a href="@Url.Action("Supprimer", "Medicament", new { id = dataRow[0] })" class="btn btn-default btn-danger">
                                     <i class="bi bi-trash-fill"></i>Supprimer
+                                        <script>
+                                        function confirmDeletePrescription() {
+											return confirm("Voulez-vous vraiment supprimer ce medicament ?");
+										}
+                                        </script>
                                 </a>
                             </span>
                         </td>

@@ -108,8 +108,24 @@ namespace Médicaments.Controllers
 		}
 
 
+        /// méthode pour supprimer un médicament à l'aide de son identifiant
+
+        public IActionResult Supprimer(string id)
+        {
+            try
+            {
+                ServiceMedicament.DeletePrescription(id);
+                return RedirectToAction("Index");
+            }
+            catch (MonException e)
+            {
+                ModelState.AddModelError("Erreur", "Erreur lors de la suppression de la prescription : " + e.Message);
+                return RedirectToAction("Index");
+            }
+        }
 
 
 
-	}
+
+    }
 }

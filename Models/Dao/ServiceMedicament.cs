@@ -97,6 +97,24 @@ namespace Médicaments.Models.Dao
 				throw e;
 			}
 		}
-	}
+
+
+        /// methode pour supprimer un médicament à l'aide de son identifiant
+
+        public static void DeletePrescription(string id)
+        {
+            Serreurs er = new Serreurs("Erreur sur la suppression du médicament.", "ServiceMedicament.DeletePrescription()");
+            String req = "DELETE FROM prescrire WHERE id_medicament = " + id;
+            try
+            {
+                DBInterface.Execute_Transaction(req);
+            }
+            catch (MonException e)
+            {
+                throw e;
+            }
+        }
+
+    }
 }
 
